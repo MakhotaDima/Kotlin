@@ -86,15 +86,21 @@ fun main(){
                 coffeeMachine.buy(type)
             }
             "fill" -> {
-                println("Write how many ml of water you want to add:")
-                val wAdd = scanner.nextInt()
-                println("Write how many ml of milk you want to add:")
-                val mAdd = scanner.nextInt()
-                println("Write how many grams of coffee beans you want to add:")
-                val bAdd = scanner.nextInt()
-                println("Write how many disposable coffee cups you want to add:")
-                val cAdd = scanner.nextInt()
-                coffeeMachine.fill(wAdd, mAdd, bAdd, cAdd)
+                try{
+                    println("Write how many ml of water you want to add:")
+                    val wAdd = scanner.nextInt()
+                    println("Write how many ml of milk you want to add:")
+                    val mAdd = scanner.nextInt()
+                    println("Write how many grams of coffee beans you want to add:")
+                    val bAdd = scanner.nextInt()
+                    println("Write how many disposable coffee cups you want to add:")
+                    val cAdd = scanner.nextInt()
+                    coffeeMachine.fill(wAdd, mAdd, bAdd, cAdd)
+                }
+                catch (e: NumberFormatException){
+                    println("Invalid input! Please enter a number.")
+                }
+
             }
             "take" -> coffeeMachine.take()
             "remaining" -> coffeeMachine.remaining()
